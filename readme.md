@@ -1,6 +1,12 @@
+#Credits :
+Zeiad Ahmed(me), Jamal Said Deen, Yagiz Eray
+
 # ROS2 A* Path Planner Simulation
 
-This project demonstrates the use of a ROS2-based A* path planner for simulating autonomous robot navigation in RViz. The planner utilizes ROS2 to launch a robot description and an A* path planning node.
+This project demonstrates the use a modified A* path planner in RVIZ for simulating autonomous robot navigation in RViz. by creating two points you are able to create the best path planner.
+
+#Missing
+The robot does not follow the path.
 
 ## Prerequisites
 
