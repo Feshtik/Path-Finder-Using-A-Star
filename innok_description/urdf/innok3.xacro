@@ -1,0 +1,191 @@
+<?xml version="1.0" ?>
+<robot name="innok" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find innok_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find innok_description)/urdf/innok.trans" />
+<xacro:include filename="$(find innok_description)/urdf/innok.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.2974080430359136 -0.09395788555264112 -0.12078975186729625" rpy="0 0 0"/>
+    <mass value="12.957373912333544"/>
+    <inertia ixx="0.152252" iyy="0.111083" izz="0.241781" ixy="-0.016405" iyz="0.006506" ixz="0.008529"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find innok_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find innok_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="driver_1_1_1_1_1_1_1">
+  <inertial>
+    <origin xyz="0.0 0.0499996988769717 0.031000000000000014" rpy="0 0 0"/>
+    <mass value="50.17240768770195"/>
+    <inertia ixx="0.200794" iyy="0.608148" izz="0.490974" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.32 0.35568 0.13" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find innok_description)/meshes/driver_1_1_1_1_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.32 0.35568 0.13" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find innok_description)/meshes/driver_1_1_1_1_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="charger_1_1_1_1_1_1_1">
+  <inertial>
+    <origin xyz="-4.672575242226085e-06 0.0862942619820953 0.03311136861462326" rpy="0 0 0"/>
+    <mass value="145.14842696339159"/>
+    <inertia ixx="1.569938" iyy="1.890326" izz="2.532494" ixy="0.000114" iyz="-0.015594" ixz="-1.1e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.32 0.180679 0.13" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find innok_description)/meshes/charger_1_1_1_1_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.32 0.180679 0.13" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find innok_description)/meshes/charger_1_1_1_1_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="topface_1_1_1_1_1_1_1">
+  <inertial>
+    <origin xyz="0.09680450975620933 -0.006250214465135462 0.06750108102149371" rpy="0 0 0"/>
+    <mass value="25.02762851051116"/>
+    <inertia ixx="0.921381" iyy="0.33928" izz="1.259723" ixy="0.002725" iyz="7e-06" ixz="-1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.225 0.15 0.062501" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find innok_description)/meshes/topface_1_1_1_1_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.225 0.15 0.062501" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find innok_description)/meshes/topface_1_1_1_1_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rightwheel_1_1_1_1_1_1_1">
+  <inertial>
+    <origin xyz="-0.04999999999999999 6.365927085732331e-08 -1.0905921193904433e-08" rpy="0 0 0"/>
+    <mass value="25.7688037853274"/>
+    <inertia ixx="0.149472" iyy="0.09621" izz="0.09621" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.12 -0.004381 0.129789" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find innok_description)/meshes/rightwheel_1_1_1_1_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.12 -0.004381 0.129789" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find innok_description)/meshes/rightwheel_1_1_1_1_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="leftwheel_1_1_1_1_1_1_1">
+  <inertial>
+    <origin xyz="0.050000000000000044 6.365927166657182e-08 -1.0905921249415584e-08" rpy="0 0 0"/>
+    <mass value="25.7688037853274"/>
+    <inertia ixx="0.149472" iyy="0.09621" izz="0.09621" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.52 -0.004381 0.129789" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find innok_description)/meshes/leftwheel_1_1_1_1_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.52 -0.004381 0.129789" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find innok_description)/meshes/leftwheel_1_1_1_1_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="frontwheelholder_1_1_1_1_1_1_1">
+  <inertial>
+    <origin xyz="0.0008961677494441767 -0.00038983819573679135 -0.0888252580380676" rpy="0 0 0"/>
+    <mass value="10.000875099038883"/>
+    <inertia ixx="0.040521" iyy="0.03414" izz="0.015364" ixy="1.7e-05" iyz="0.00016" ixz="0.000169"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.321653 0.450939 -0.012499" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find innok_description)/meshes/frontwheelholder_1_1_1_1_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.321653 0.450939 -0.012499" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find innok_description)/meshes/frontwheelholder_1_1_1_1_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rigid 70" type="fixed">
+  <origin xyz="0.32 -0.35568 -0.13" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="driver_1_1_1_1_1_1_1"/>
+</joint>
+
+<joint name="Rigid 71" type="fixed">
+  <origin xyz="0.32 -0.180679 -0.13" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="charger_1_1_1_1_1_1_1"/>
+</joint>
+
+<joint name="Rigid 72" type="fixed">
+  <origin xyz="0.225 -0.15 -0.062501" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="topface_1_1_1_1_1_1_1"/>
+</joint>
+
+<joint name="LEFT WHEEL" type="fixed">
+  <origin xyz="0.12 0.004381 -0.129789" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="rightwheel_1_1_1_1_1_1_1"/>
+</joint>
+
+<joint name="RIGHT WHEEL" type="fixed">
+  <origin xyz="0.52 0.004381 -0.129789" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="leftwheel_1_1_1_1_1_1_1"/>
+</joint>
+
+<joint name="FRONT WHEEL" type="continuous">
+  <origin xyz="0.096653 -0.300939 0.075" rpy="0 0 0"/>
+  <parent link="topface_1_1_1_1_1_1_1"/>
+  <child link="frontwheelholder_1_1_1_1_1_1_1"/>
+  <axis xyz="0 0 1"/>
+</joint>
+
+</robot>

@@ -1,0 +1,206 @@
+<?xml version="1.0" ?>
+<robot name="innok" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Define scaling properties -->
+  <xacro:property name="scale_factor" value="3"/>
+  <xacro:property name="scale_mass" value="${scale_factor**3}"/>
+  <xacro:property name="scale_inertia" value="${scale_factor**5}"/>
+
+  <!-- Include other files -->
+  <xacro:include filename="$(find innok_description)/urdf/materials.xacro" />
+  <xacro:include filename="$(find innok_description)/urdf/innok.trans" />
+  <xacro:include filename="$(find innok_description)/urdf/innok.gazebo" />
+
+  <!-- Base link -->
+  <link name="base_link">
+    <inertial>
+      <origin xyz="${0.2974080430359136 * scale_factor} ${-0.09395788555264112 * scale_factor} ${-0.12078975186729625 * scale_factor}" rpy="0 0 0"/>
+      <mass value="${12.957373912333544 * scale_mass}"/>
+      <inertia ixx="${0.152252 * scale_inertia}" iyy="${0.111083 * scale_inertia}" izz="${0.241781 * scale_inertia}" ixy="${-0.016405 * scale_inertia}" iyz="${0.006506 * scale_inertia}" ixz="${0.008529 * scale_inertia}"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find innok_description)/meshes/base_link.stl" scale="${0.001 * scale_factor} ${0.001 * scale_factor} ${0.001 * scale_factor}"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find innok_description)/meshes/base_link.stl" scale="${0.001 * scale_factor} ${0.001 * scale_factor} ${0.001 * scale_factor}"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Driver link -->
+  <link name="driver_1_1_1_1_1_1_1">
+    <inertial>
+      <origin xyz="${0.0 * scale_factor} ${0.0499996988769717 * scale_factor} ${0.031000000000000014 * scale_factor}" rpy="0 0 0"/>
+      <mass value="${50.17240768770195 * scale_mass}"/>
+      <inertia ixx="${0.200794 * scale_inertia}" iyy="${0.608148 * scale_inertia}" izz="${0.490974 * scale_inertia}" ixy="0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="${-0.32 * scale_factor} ${0.35568 * scale_factor} ${0.13 * scale_factor}" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find innok_description)/meshes/driver_1_1_1_1_1_1_1.stl" scale="${0.001 * scale_factor} ${0.001 * scale_factor} ${0.001 * scale_factor}"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="${-0.32 * scale_factor} ${0.35568 * scale_factor} ${0.13 * scale_factor}" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find innok_description)/meshes/driver_1_1_1_1_1_1_1.stl" scale="${0.001 * scale_factor} ${0.001 * scale_factor} ${0.001 * scale_factor}"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Charger link -->
+  <link name="charger_1_1_1_1_1_1_1">
+    <inertial>
+      <origin xyz="${-4.672575242226085e-06 * scale_factor} ${0.0862942619820953 * scale_factor} ${0.03311136861462326 * scale_factor}" rpy="0 0 0"/>
+      <mass value="${145.14842696339159 * scale_mass}"/>
+      <inertia ixx="${1.569938 * scale_inertia}" iyy="${1.890326 * scale_inertia}" izz="${2.532494 * scale_inertia}" ixy="${0.000114 * scale_inertia}" iyz="${-0.015594 * scale_inertia}" ixz="${-1.1e-05 * scale_inertia}"/>
+    </inertial>
+    <visual>
+      <origin xyz="${-0.32 * scale_factor} ${0.180679 * scale_factor} ${0.13 * scale_factor}" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find innok_description)/meshes/charger_1_1_1_1_1_1_1.stl" scale="${0.001 * scale_factor} ${0.001 * scale_factor} ${0.001 * scale_factor}"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="${-0.32 * scale_factor} ${0.180679 * scale_factor} ${0.13 * scale_factor}" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find innok_description)/meshes/charger_1_1_1_1_1_1_1.stl" scale="${0.001 * scale_factor} ${0.001 * scale_factor} ${0.001 * scale_factor}"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Topface link -->
+  <link name="topface_1_1_1_1_1_1_1">
+    <inertial>
+      <origin xyz="${0.09680450975620933 * scale_factor} ${-0.006250214465135462 * scale_factor} ${0.06750108102149371 * scale_factor}" rpy="0 0 0"/>
+      <mass value="${25.02762851051116 * scale_mass}"/>
+      <inertia ixx="${0.921381 * scale_inertia}" iyy="${0.33928 * scale_inertia}" izz="${1.259723 * scale_inertia}" ixy="${0.002725 * scale_inertia}" iyz="${7e-06 * scale_inertia}" ixz="${-1e-06 * scale_inertia}"/>
+    </inertial>
+    <visual>
+      <origin xyz="${-0.225 * scale_factor} ${0.15 * scale_factor} ${0.062501 * scale_factor}" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find innok_description)/meshes/topface_1_1_1_1_1_1_1.stl" scale="${0.001 * scale_factor} ${0.001 * scale_factor} ${0.001 * scale_factor}"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="${-0.225 * scale_factor} ${0.15 * scale_factor} ${0.062501 * scale_factor}" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find innok_description)/meshes/topface_1_1_1_1_1_1_1.stl" scale="${0.001 * scale_factor} ${0.001 * scale_factor} ${0.001 * scale_factor}"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Right wheel link -->
+  <link name="rightwheel_1_1_1_1_1_1_1">
+    <inertial>
+      <origin xyz="${-0.04999999999999999 * scale_factor} ${6.365927085732331e-08 * scale_factor} ${-1.0905921193904433e-08 * scale_factor}" rpy="0 0 0"/>
+      <mass value="${25.7688037853274 * scale_mass}"/>
+      <inertia ixx="${0.149472 * scale_inertia}" iyy="${0.09621 * scale_inertia}" izz="${0.09621 * scale_inertia}" ixy="0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="${-0.12 * scale_factor} ${-0.004381 * scale_factor} ${0.129789 * scale_factor}" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find innok_description)/meshes/rightwheel_1_1_1_1_1_1_1.stl" scale="${0.001 * scale_factor} ${0.001 * scale_factor} ${0.001 * scale_factor}"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="${-0.12 * scale_factor} ${-0.004381 * scale_factor} ${0.129789 * scale_factor}" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find innok_description)/meshes/rightwheel_1_1_1_1_1_1_1.stl" scale="${0.001 * scale_factor} ${0.001 * scale_factor} ${0.001 * scale_factor}"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Left wheel link -->
+  <link name="leftwheel_1_1_1_1_1_1_1">
+    <inertial>
+      <origin xyz="${0.050000000000000044 * scale_factor} ${6.365927166657182e-08 * scale_factor} ${-1.0905921249415584e-08 * scale_factor}" rpy="0 0 0"/>
+      <mass value="${25.7688037853274 * scale_mass}"/>
+      <inertia ixx="${0.149472 * scale_inertia}" iyy="${0.09621 * scale_inertia}" izz="${0.09621 * scale_inertia}" ixy="0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="${-0.52 * scale_factor} ${-0.004381 * scale_factor} ${0.129789 * scale_factor}" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find innok_description)/meshes/leftwheel_1_1_1_1_1_1_1.stl" scale="${0.001 * scale_factor} ${0.001 * scale_factor} ${0.001 * scale_factor}"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="${-0.52 * scale_factor} ${-0.004381 * scale_factor} ${0.129789 * scale_factor}" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find innok_description)/meshes/leftwheel_1_1_1_1_1_1_1.stl" scale="${0.001 * scale_factor} ${0.001 * scale_factor} ${0.001 * scale_factor}"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Front wheel holder link -->
+  <link name="frontwheelholder_1_1_1_1_1_1_1">
+    <inertial>
+      <origin xyz="${0.0008961677494441767 * scale_factor} ${-0.00038983819573679135 * scale_factor} ${-0.0888252580380676 * scale_factor}" rpy="0 0 0"/>
+      <mass value="${10.000875099038883 * scale_mass}"/>
+      <inertia ixx="${0.040521 * scale_inertia}" iyy="${0.03414 * scale_inertia}" izz="${0.015364 * scale_inertia}" ixy="${1.7e-05 * scale_inertia}" iyz="${0.00016 * scale_inertia}" ixz="${0.000169 * scale_inertia}"/>
+    </inertial>
+    <visual>
+      <origin xyz="${-0.321653 * scale_factor} ${0.450939 * scale_factor} ${-0.012499 * scale_factor}" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find innok_description)/meshes/frontwheelholder_1_1_1_1_1_1_1.stl" scale="${0.001 * scale_factor} ${0.001 * scale_factor} ${0.001 * scale_factor}"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="${-0.321653 * scale_factor} ${0.450939 * scale_factor} ${-0.012499 * scale_factor}" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find innok_description)/meshes/frontwheelholder_1_1_1_1_1_1_1.stl" scale="${0.001 * scale_factor} ${0.001 * scale_factor} ${0.001 * scale_factor}"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Joints -->
+  <joint name="Rigid 70" type="fixed">
+    <origin xyz="${0.32 * scale_factor} ${-0.35568 * scale_factor} ${-0.13 * scale_factor}" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="driver_1_1_1_1_1_1_1"/>
+  </joint>
+
+  <joint name="Rigid 71" type="fixed">
+    <origin xyz="${0.32 * scale_factor} ${-0.180679 * scale_factor} ${-0.13 * scale_factor}" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="charger_1_1_1_1_1_1_1"/>
+  </joint>
+
+  <joint name="Rigid 72" type="fixed">
+    <origin xyz="${0.225 * scale_factor} ${-0.15 * scale_factor} ${-0.062501 * scale_factor}" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="topface_1_1_1_1_1_1_1"/>
+  </joint>
+
+  <joint name="LEFT WHEEL" type="fixed">
+    <origin xyz="${0.12 * scale_factor} ${0.004381 * scale_factor} ${-0.129789 * scale_factor}" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="rightwheel_1_1_1_1_1_1_1"/>
+  </joint>
+
+  <joint name="RIGHT WHEEL" type="fixed">
+    <origin xyz="${0.52 * scale_factor} ${0.004381 * scale_factor} ${-0.129789 * scale_factor}" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="leftwheel_1_1_1_1_1_1_1"/>
+  </joint>
+
+  <joint name="FRONT WHEEL" type="continuous">
+    <origin xyz="${0.096653 * scale_factor} ${-0.300939 * scale_factor} ${0.075 * scale_factor}" rpy="0 0 0"/>
+    <parent link="topface_1_1_1_1_1_1_1"/>
+    <child link="frontwheelholder_1_1_1_1_1_1_1"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+</robot>
