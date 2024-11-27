@@ -6,7 +6,7 @@ Zeiad Ahmed(me), Jamal Said Deen, Yagiz Eray
 This project demonstrates the use a modified A* path planner in RVIZ for visualising robot navigation. by creating two points you are able to create the best path planner.
 
 #Missing
-The robot does not follow the path.
+The robot does not follow the path, the curvature algorithm which makes the path look more realistic is not good.
 
 ## Prerequisites
 
